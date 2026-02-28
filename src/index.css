@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #d41132;
+  --color-background-light: #f8f6f6;
+  --color-background-dark: #0a0a0a;
+  --font-display: "Inter", sans-serif;
+}
+
+@layer utilities {
+  .glow-maroon {
+    box-shadow: 0 0 40px -10px rgba(212, 17, 50, 0.4);
+  }
+  .halo-effect {
+    position: relative;
+  }
+  .halo-effect::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    background: linear-gradient(45deg, #d41132, transparent, #d41132);
+    border-radius: 9999px;
+    z-index: -1;
+    opacity: 0.6;
+    filter: blur(12px);
+  }
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .tech-icon-glow:hover {
+    box-shadow: 0 0 15px rgba(212, 17, 50, 0.4);
+  }
+}
